@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width">
     <meta name="generator" content="Framer 9805f18">
 
-    <!-- ✅ Page title (tab) -->
+    <!-- ✅ Page title (tab only) -->
     <title>Hemera Digital</title>
     <script>
-      // Ensure only "Hemera Digital" shows in browser tab
+      // Keep tab text short even if Framer or SEO titles differ
       document.addEventListener('DOMContentLoaded', () => {
-        document.title = 'Hemera Digital';
+        const wanted = 'Hemera Digital';
+        function enforce() { if (document.title !== wanted) document.title = wanted; }
+        enforce();
+        new MutationObserver(enforce).observe(document.head, {childList: true, subtree: true, characterData: true});
       });
     </script>
 
-    <!-- ✅ SEO Description -->
+    <!-- ✅ SEO description -->
     <meta name="description" content="Hemera Digital helps HVAC businesses book more service calls using targeted ads, smart automation, and clear results tracking to drive real growth.">
 
     <!-- ✅ Favicon setup -->
@@ -24,8 +27,9 @@
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#0B57FF">
 
-    <!-- ✅ Social preview (Open Graph & Twitter) -->
+    <!-- ✅ Social preview (Open Graph + Twitter) -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Hemera Digital">
     <meta property="og:title" content="Hemera Digital | More Booked HVAC Jobs">
     <meta property="og:description" content="Hemera Digital helps HVAC businesses book more service calls using targeted ads, smart automation, and clear results tracking to drive real growth.">
     <meta property="og:url" content="https://hemeradigital.com">
@@ -41,7 +45,7 @@
     <meta name="framer-search-index-fallback" content="https://framerusercontent.com/sites/3Qdicq62RQlDwruYg52qo0/searchIndex-xGlaNr5HkjBC.json">
     <meta name="framer-html-plugin" content="disable">
 
-    <!-- Fonts (keep this exactly where it is) -->
+    <!-- ✅ Fonts (keep everything below untouched) -->
     <style data-framer-font-css>
 @font-face {
   font-family: 'Instrument Serif';
@@ -209,6 +213,7 @@
     
 </body>
 </html>
+
 
 
 
